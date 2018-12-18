@@ -4,10 +4,13 @@ import PropTypes from 'prop-types';
 const Movie = (props) => {
   return (
     <div>
+      <h2>{props.title}</h2>
+      <p>{props.release}</p>
       <img src={props.image}
            alt="movie poster"
       />
-      <h2>{props.title}</h2>
+      <p>{props.overview}</p>
+
     </div>
   )
 }

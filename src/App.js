@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Home from './components/Home';
-import Customer from './components/Customer';
+import CustomerData from './components/CustomerData';
 import Library from './components/Library';
 import Search from './components/Search';
 
@@ -29,7 +29,7 @@ class App extends Component {
             </ul>
             {/* Routes will go here */}
             <Route path="/" exact={true} component={Home} />
-            <Route path="/customer" component={Customer} />
+            <Route path="/customer" component={CustomerData} />
             <Route path="/library" component={Library} />
             <Route path="/search" component={Search} />
           </div>

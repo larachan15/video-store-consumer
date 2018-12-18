@@ -26,7 +26,7 @@ class Library extends Component {
     // const query = "edward scissorhands"
     // console.log("https://api.themoviedb.org/3")
 
-    const GET_ALL_MOVIES = "http://localhost:3000";
+    const GET_ALL_MOVIES = "http://localhost:3000/movies";
 
     axios.get(GET_ALL_MOVIES)
     .then((response) => {
@@ -48,6 +48,8 @@ class Library extends Component {
                     key={movie.id}
                     title={movie.title}
                     image={movie.image_url}
+                    overview={movie.overview}
+                    release={movie.release_date}
              />
 
     })

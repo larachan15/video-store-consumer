@@ -1,8 +1,12 @@
 import React from 'react';
-const Customer = () => {
+import PropTypes from 'prop-types';
+
+const Customer = (props) => {
     return (
         <div>
-            <h1 className="container">Customers</h1>
+            <h2 className="container">Customer: {props.name}</h2>
+            <p>Address: {props.address}</p>
+            <p>Phone: {props.phone}</p>
         </div>
     );
 }
