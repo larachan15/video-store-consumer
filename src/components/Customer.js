@@ -6,6 +6,7 @@ const Customer = (props) => {
         <div>
             <h2 className="container">Customer: {props.name}</h2>
             <p>Address: {props.address}</p>
+            <p>Phone: {props.phone}</p>
         </div>
     );
 }
