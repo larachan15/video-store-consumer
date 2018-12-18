@@ -1,0 +1,58 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import axios from 'axios';
+import Customer from './Customer';
+
+class CustomerData extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      customers: [],
+      errorMessages: []
+    };
+  }
+
+  componentDidMount() {
+    // const key = "62ef95dcbf154f7ee0081ff91b30f3d5";
+    // const query = "edward scissorhands"
+    // console.log("https://api.themoviedb.org/3")
+
+    const GET_ALL_CUSTOMERS = "http://localhost:3000/customers";
+
+    axios.get(GET_ALL_CUSTOMERS)
+    .then((response) => {
+      this.setState({ customers: response.data });
+    })
+    .catch((error) => {
+      this.setState({
+        errorMessages: [...this.state.errorMessages, error.message]
+      });
+    });
+  }
+
+  render() {
+    console.log(this.state.customers);
+
+    const loadCustomers = this.state.customers.map((customer, i) => {
+
+      return <Customer
+                    key={customer.id}
+                    name={customer.name}
+                    address={customer.address}
+                    city={customer.city}
+                    state={customer.state}
+                    zip={customer.postal_code}
+                    phone={customer.phone}
+                    credit={customer.account_credit}
+                    moviesRented={customer.movies_checked_out_count}
+             />
+
+    })
+    return (
+      <div>{loadCustomers}</div>
+    )
+  }
+}
+
+export default CustomerData;
