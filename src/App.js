@@ -5,7 +5,7 @@ import './App.css';
 import Home from './components/Home';
 import CustomerData from './components/CustomerData';
 import Library from './components/Library';
-import Search from './components/Search';
+import SearchContainer from './components/SearchContainer';
 
 import {
   BrowserRouter as Router,
@@ -31,7 +31,7 @@ class App extends Component {
             <Route path="/" exact={true} component={Home} />
             <Route path="/customer" component={CustomerData} />
             <Route path="/library" component={Library} />
-            <Route path="/search" component={Search} />
+            <Route path="/search" component={SearchContainer} />
           </div>
         </div>
       </Router>

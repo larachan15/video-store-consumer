@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-const Search = () => {
+class Search extends Component {
+
+  // constructor() {
+  //   super();
+  //
+  //   this.state = {
+  //     search: "",
+  //   };
+  // }
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    this.props.searchCallback(this.state.search);
+  }
+
+  render() {
     return (
-        <div>
-            <h1 className="container">Search</h1>
-        </div>
+      <div>
+        <form onSubmit={this.onSubmit}>
+          <input type='text'
+            placeholder='Search'
+            onChange={(e) => this.setState({
+              search: e.target.value
+            })}
+            />
+        </form>
+      </div>
     );
+  }
+}
+
+Search.propTypes = {
+  searchCallback: PropTypes.func.isRequired
 }
 export default Search;
