@@ -3,13 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import Movie from './Movie';
 
-// const Library = () => {
-//     return (
-//         <div>
-//             <h1 className="container">Library</h1>
-//         </div>
-//     );
-// }
+const ADD_URL = "http://localhost:3000/movies?"
 
 class Library extends Component {
   constructor() {
@@ -54,7 +48,9 @@ class Library extends Component {
 
     })
     return (
-      <div>{loadMovies}</div>
+      <div>
+        {loadMovies}
+      </div>
     )
   }
 }
