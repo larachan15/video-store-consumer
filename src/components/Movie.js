@@ -13,8 +13,14 @@ const Movie = (props) => {
       <input
         type="button"
         value="Add to library"
-        className="FinalPoem__reveal-btn"
+        className=""
         onClick={props.onMovieSelected} />
+
+      <input
+        type="button"
+        value="Select for Rental"
+        className=""
+        onClick={() => props.selectedMovie(props.potato)}/>
 
     </div>
   )

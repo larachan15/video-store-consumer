@@ -15,6 +15,10 @@ class Library extends Component {
     };
   }
 
+ selectMovie = (id) => {
+   this.props.selectMovie(id)
+ }
+
   componentDidMount() {
     // const key = "62ef95dcbf154f7ee0081ff91b30f3d5";
     // const query = "edward scissorhands"
@@ -36,14 +40,16 @@ class Library extends Component {
   render() {
     console.log(this.state.movies);
 
-    const loadMovies = this.state.movies.map((movie, i) => {
+    const loadMovies = this.state.movies.map((movie) => {
 
       return <Movie
                     key={movie.id}
+                    potato={movie.id}
                     title={movie.title}
                     image={movie.image_url}
                     overview={movie.overview}
                     release={movie.release_date}
+                    selectedMovie={this.selectMovie}
              />
 
     })

@@ -21,6 +21,7 @@ class SearchContainer extends Component {
 
   searchMovies = (title) => {
 
+
     axios.get(SEARCH_URL + title)
     .then((response) => {
       console.log(response.data);
@@ -33,6 +34,7 @@ class SearchContainer extends Component {
       console.log(error);
     });
   }
+
 
   addMovieToLibrary = (movie) => {
     console.log(movie.title)
@@ -54,10 +56,9 @@ class SearchContainer extends Component {
     });
   }
 
-
   render() {
-    // const movies = this.state.movies;
-    const moviesList = this.state.movies.map((movie) => {
+    const movies = this.state.movies
+    const moviesList = movies.map((movie) => {
       return <Movie
         key={movie.id}
         title={movie.title}
@@ -73,14 +74,13 @@ class SearchContainer extends Component {
         <div className="card">
           <ul>
             {moviesList}
-
           </ul>
 
         </div>
       </div>
-      );
-    }
-
+    );
   }
 
-  export default SearchContainer;
+}
+
+export default SearchContainer;
