@@ -1,28 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Righteous');
+
+/* @import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"); */
+
+/* @import "bootstrap"; */
+
+/* @font-face {
+  font-family: 'righteous';
+  src: url('https://fonts.googleapis.com/css?family=Julius+Sans+One|Righteous');
+} */
+
 .App {
+  /* text-align: center; */
+  background-color: white;
+  font-family: 'helvetica';
+  display: flex;
+
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:active {
+  color: black;
+}
+
+a:hover {
+  background-color: yellow;
+}
+
+.Title{
+  font-size: 65px;
+  font-family: 'Righteous', cursive;
+  color: #ffb600;
+  padding: 22px;
+  text-shadow: 2px 2px #ff0000;
+  border: 5px solid red;
+  padding: 5px;
+  border-radius: 100px;
   text-align: center;
+  word-spacing: 10px;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.Icon{
+  color: #ffb600;
+  font-size: 33px;
+  padding: 10px 20px 10px 10px;
+
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.Links{
+  font-size: 22px;
+  padding-right: 11px;
+  word-spacing: 10px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.App-title {
-  font-size: 1.5em;
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  line-height: 125%;
+  font-size: 33px;
+  font-family: 'Righteous', cursive;
+  color: #fff;
+  background-color: #ffb600;
+  text-align: center;
+  text-shadow: 2px 2px #ff0000;
+  border: 2px solid red;
+  /* padding: 40px 40px 75px 40px; */
+  border-radius: 100px;
+  margin-bottom: 22px;
+  flex-direction: column;
+
+
 }
 
-.App-intro {
-  font-size: large;
+
+.Search {
+  display: flex;
+  align-items: flex-end;
+  color: black;
+  padding: 50px;
+}
+.Lists {
+  font-size: 20px;
+  font-family: 'Righteous', cursive;
+  color: #fff;
+  background-color: #ffb600;
+  text-align: center;
+  padding: 22px;
+  border: 2px solid red;
+  padding: 40px 40px 100px 40px;
+  border-radius: 100px;
+  margin-bottom: 40px;
+
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+
+/* .Library {
+  display: flex;
+  border: 2px solid red;
+  border-radius: 20px;
+  background-color: #ffb600;
+} */
