@@ -8,6 +8,9 @@ import Library from './components/Library';
 import SearchContainer from './components/SearchContainer';
 import RentalData from './components/RentalData';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -37,30 +40,54 @@ class App extends Component {
   }
 
   render() {
+
     return (
+
       <Router>
         <div className="App">
-          <div className="container">
 
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/customer">Customers</Link></li>
-              <li><Link to="/library">Library</Link></li>
-              <li><Link to="/search">Search</Link></li>
-              <li>
-                <div>
-                  Selected Movie: {this.state.selectedMovieToDisplay}
-                </div> </li>
-
-            </ul>
-            {/* Routes will go here */}
-            <Route path="/" exact={true} component={Home} />
-            <Route path="/customer" component={CustomerData} />
-            <Route path="/library" component={() => <Library selectMovie={this.selectMovie} />} />
-            <Route path="/search" component={SearchContainer} />
+          <div className="Title">
+            <h4>
+              <FontAwesomeIcon className="Icon" icon={faBolt}/>
+              <FontAwesomeIcon className="Icon" icon={faBolt}/>
+              <FontAwesomeIcon className="Icon" icon={faBolt}/>
+              Zippy Rentalz
+              <FontAwesomeIcon className="Icon" icon={faBolt}/>
+              <FontAwesomeIcon className="Icon" icon={faBolt}/>
+              <FontAwesomeIcon className="Icon" icon={faBolt}/>
+            </h4>
 
 
 
+            <div className="Navbar">
+              <ul>
+                <div className="Links">
+                  <li><Link to="/">Home <FontAwesomeIcon icon={faBolt}/></Link></li>
+
+                  <li><Link to="/customer">Customers <FontAwesomeIcon icon={faBolt}/></Link></li>
+                  <li><Link to="/library">Library <FontAwesomeIcon icon={faBolt}/></Link></li>
+                  <li><Link to="/search">Search <FontAwesomeIcon icon={faBolt}/></Link></li>
+
+                </div>
+              </ul>
+
+
+              <div className="">
+                Selected Movie: {this.state.selectedMovieToDisplay}
+              </div>
+            </div>
+
+
+
+            <div className="Lists">
+
+              {/* Routes will go here */}
+              <Route path="/" exact={true} component={Home} />
+              <Route path="/customer" component={CustomerData} />
+
+              <Route path="/library" component={() => <Library selectMovie={this.selectMovie} />} />
+              <Route path="/search" component={SearchContainer} />
+            </div>
           </div>
         </div>
       </Router>
