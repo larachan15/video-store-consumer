@@ -21,6 +21,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedMovieToDisplay: "",
+      // selectedCustomerToDisplay: "",
       status: {
         message: '',
       }
@@ -30,7 +32,7 @@ class App extends Component {
   selectMovie = (movie) => {
     console.log(movie.title);
     this.setState({
-      movie
+      selectedMovieToDisplay: movie.title
     })
   }
 
@@ -45,7 +47,10 @@ class App extends Component {
               <li><Link to="/customer">Customers</Link></li>
               <li><Link to="/library">Library</Link></li>
               <li><Link to="/search">Search</Link></li>
-              <li>Selected Movie: {this.selectMovie} </li>
+              <li>
+                <div>
+                  Selected Movie: {this.state.selectedMovieToDisplay}
+                </div> </li>
 
             </ul>
             {/* Routes will go here */}
