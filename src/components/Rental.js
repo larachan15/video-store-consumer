@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//
+
 // const Rental = ({selectionType, name}) => {
 //   return (
 //     <div>
@@ -12,5 +12,5 @@ import PropTypes from 'prop-types';
 //   )
 //
 // }
-
+//
 // export default Rental;

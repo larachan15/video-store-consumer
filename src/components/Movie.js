@@ -20,7 +20,7 @@ const Movie = (props) => {
         type="button"
         value="Select for Rental"
         className=""
-        onClick={() => props.selectedMovie(props.potato)}/>
+        onClick={() => props.selectedMovie(props)}/>
 
     </div>
   )

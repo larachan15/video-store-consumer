@@ -15,8 +15,8 @@ class Library extends Component {
     };
   }
 
- selectMovie = (id) => {
-   this.props.selectMovie(id)
+ selectMovie = (movie) => {
+   this.props.selectMovie(movie)
  }
 
   componentDidMount() {
@@ -44,7 +44,7 @@ class Library extends Component {
 
       return <Movie
                     key={movie.id}
-                    potato={movie.id}
+                    movieId={movie.id}
                     title={movie.title}
                     image={movie.image_url}
                     overview={movie.overview}
