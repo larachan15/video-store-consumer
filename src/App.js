@@ -39,6 +39,7 @@ class App extends Component {
     })
   }
 
+<<<<<<< HEAD
   setStatus = (message, type) => {
     this.setState({
       status: { message, type }
@@ -47,6 +48,13 @@ class App extends Component {
 
   clearStatus = () => {
     this.setState({ status: { message: '' }})
+=======
+  selectCustomer = (customer) => {
+    console.log(customer.name);
+    this.setState({
+      selectedCustomerToDisplay: customer.name
+    })
+>>>>>>> 8ad7e2d3dbd71bf946d7803bd1684f94b8b4e6fe
   }
 
   render() {
@@ -85,6 +93,10 @@ class App extends Component {
               <div className="">
                 Selected Movie: {this.state.selectedMovieToDisplay}
               </div>
+
+              <div className="">
+                Selected Customer: {this.state.selectedCustomerToDisplay}
+              </div>
             </div>
 
 
@@ -93,7 +105,7 @@ class App extends Component {
 
               {/* Routes will go here */}
               <Route path="/" exact={true} component={Home} />
-              <Route path="/customer" component={CustomerData} />
+              <Route path="/customer" component={() => <CustomerData selectCustomer={this.selectCustomer} /> } />
 
               <Route path="/library" component={() => <Library selectMovie={this.selectMovie} />} />
               <Route path="/search" component={SearchContainer} />
