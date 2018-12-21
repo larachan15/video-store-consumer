@@ -20,9 +20,7 @@ class Library extends Component {
  }
 
   componentDidMount() {
-    // const key = "62ef95dcbf154f7ee0081ff91b30f3d5";
-    // const query = "edward scissorhands"
-    // console.log("https://api.themoviedb.org/3")
+
 
     const GET_ALL_MOVIES = "http://localhost:3000/movies";
 
