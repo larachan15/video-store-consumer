@@ -14,7 +14,7 @@
   background-color: white;
   font-family: 'helvetica';
   display: flex;
-  border: 5px solid red;
+  border: 5px solid #f4511e;
   border-radius: 100px;
   display: flex;
   align-items: center;
@@ -74,7 +74,7 @@ a:hover {
   background-color: #ffb600;
   text-align: center;
   text-shadow: 2px 2px #ff0000;
-  border: 2px solid red;
+  border: 2px solid #f4511e;
   /* padding: 40px 40px 75px 40px; */
   border-radius: 100px;
   margin-bottom: 22px;
@@ -98,17 +98,29 @@ a:hover {
   text-shadow: none;
   text-align: center;
   padding: 22px;
-  border: 2px solid red;
+  border: 2px solid #f4511e;
   padding: 40px 40px 100px 40px;
   border-radius: 100px;
   margin-bottom: 40px;
 
 }
 
+.showNotification {
+  border-radius: 300px;
+  margin-bottom: 20px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: inherit;
 
+}
 /* .Library {
   display: flex;
-  border: 2px solid red;
+  border: 2px solid #f4511e;
   border-radius: 20px;
   background-color: #ffb600;
 } */
