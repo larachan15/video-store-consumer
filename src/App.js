@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -6,7 +8,8 @@ import Home from './components/Home';
 import CustomerData from './components/CustomerData';
 import Library from './components/Library';
 import SearchContainer from './components/SearchContainer';
-import RentalData from './components/RentalData';
+import CheckoutRental from './components/CheckoutRental';
+import Notification from './components/Notification';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
@@ -25,7 +28,7 @@ class App extends Component {
     super(props);
     this.state = {
       selectedMovieToDisplay: "",
-      // selectedCustomerToDisplay: "",
+      showNotification: false,
       status: {
         message: '',
       }
@@ -42,14 +45,45 @@ class App extends Component {
 
 
   selectCustomer = (customer) => {
-    console.log(customer.name);
+    console.log(customer);
     this.setState({
-      selectedCustomerToDisplay: customer.name
+      selectedCustomer: customer
     })
+  }
 
+  handleCheckoutClick = () => {
+    const {
+      selectedMovieToDisplay,
+      selectedCustomer
+    } = this.state;
+
+    if (!selectedMovieToDisplay || !selectedCustomer) {
+      return;
+    }
+
+    const url = `http://localhost:3000/rentals/${selectedMovieToDisplay}/check-out?customer_id=${selectedCustomer.id}`;
+
+    axios.post(url)
+      .then((response) => {
+        console.log(response);
+        console.log("success!");
+        this.setState({
+          showNotification: true
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  handleNotificationClick = () => {
+    this.setState({
+      showNotification: false
+    });
   }
 
   render() {
+    const customerName = this.state.selectedCustomer && this.state.selectedCustomer.name;
 
     return (
 
@@ -87,8 +121,20 @@ class App extends Component {
               </div>
 
               <div className="">
-                Selected Customer: {this.state.selectedCustomerToDisplay}
+                Selected Customer: {customerName}
               </div>
+
+              <CheckoutRental
+                onClick={this.handleCheckoutClick}
+              />
+
+            {this.state.showNotification && (
+              <Notification
+                onClick={this.handleNotificationClick}
+              >
+                 Successfully checked out {this.state.selectedMovieToDisplay} to {customerName}
+              </Notification>
+            )}
             </div>
 
 

@@ -42,6 +42,7 @@ class CustomerData extends Component {
 
       return <Customer
                     key={customer.id}
+                    id={customer.id}
                     name={customer.name}
                     address={customer.address}
                     city={customer.city}
