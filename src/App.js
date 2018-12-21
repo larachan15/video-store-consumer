@@ -128,6 +128,10 @@ class App extends Component {
                 onClick={this.handleCheckoutClick}
               />
 
+
+            </div>
+
+            <div className="showNotification">
             {this.state.showNotification && (
               <Notification
                 onClick={this.handleNotificationClick}
@@ -135,6 +139,7 @@ class App extends Component {
                  Successfully checked out {this.state.selectedMovieToDisplay} to {customerName}
               </Notification>
             )}
+
             </div>
 
 
