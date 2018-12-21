@@ -143,9 +143,9 @@ class App extends Component {
 
               {/* Routes will go here */}
               <Route path="/" exact={true} component={Home} />
-              <Route path="/customer" component={() => <CustomerData selectCustomer={this.selectCustomer} /> } />
+              <Route path="/customer" render={() => <CustomerData selectCustomer={this.selectCustomer} /> } />
 
-              <Route path="/library" component={() => <Library selectMovie={this.selectMovie} />} />
+              <Route path="/library" render={() => <Library selectMovie={this.selectMovie} />} />
               <Route path="/search" component={SearchContainer} />
             </div>
           </div>
