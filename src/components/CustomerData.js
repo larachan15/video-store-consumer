@@ -13,6 +13,10 @@ class CustomerData extends Component {
     };
   }
 
+  selectCustomer = (customer) => {
+    this.props.selectCustomer(customer)
+  }
+
   componentDidMount() {
     // const key = "62ef95dcbf154f7ee0081ff91b30f3d5";
     // const query = "edward scissorhands"
@@ -46,6 +50,7 @@ class CustomerData extends Component {
                     phone={customer.phone}
                     credit={customer.account_credit}
                     moviesRented={customer.movies_checked_out_count}
+                    selectedCustomer={this.selectCustomer}
              />
 
     })

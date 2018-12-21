@@ -39,6 +39,13 @@ class App extends Component {
     })
   }
 
+  selectCustomer = (customer) => {
+    console.log(customer.name);
+    this.setState({
+      selectedCustomerToDisplay: customer.name
+    })
+  }
+
   render() {
 
     return (
@@ -75,6 +82,10 @@ class App extends Component {
               <div className="">
                 Selected Movie: {this.state.selectedMovieToDisplay}
               </div>
+
+              <div className="">
+                Selected Customer: {this.state.selectedCustomerToDisplay}
+              </div>
             </div>
 
 
@@ -83,7 +94,7 @@ class App extends Component {
 
               {/* Routes will go here */}
               <Route path="/" exact={true} component={Home} />
-              <Route path="/customer" component={CustomerData} />
+              <Route path="/customer" component={() => <CustomerData selectCustomer={this.selectCustomer} /> } />
 
               <Route path="/library" component={() => <Library selectMovie={this.selectMovie} />} />
               <Route path="/search" component={SearchContainer} />
