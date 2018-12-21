@@ -39,11 +39,22 @@ class App extends Component {
     })
   }
 
+<<<<<<< HEAD
+  setStatus = (message, type) => {
+    this.setState({
+      status: { message, type }
+    });
+  }
+
+  clearStatus = () => {
+    this.setState({ status: { message: '' }})
+=======
   selectCustomer = (customer) => {
     console.log(customer.name);
     this.setState({
       selectedCustomerToDisplay: customer.name
     })
+>>>>>>> 8ad7e2d3dbd71bf946d7803bd1684f94b8b4e6fe
   }
 
   render() {
