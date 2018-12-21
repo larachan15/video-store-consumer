@@ -3,14 +3,6 @@ import PropTypes from 'prop-types';
 
 class Search extends Component {
 
-  // constructor() {
-  //   super();
-  //
-  //   this.state = {
-  //     search: "",
-  //   };
-  // }
-
   onSubmit = (event) => {
     event.preventDefault();
     this.props.searchCallback(this.state.search);

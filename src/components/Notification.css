@@ -1,10 +1,10 @@
 .checkout_button {
   border-radius: 20px;
-  background-color: #f4511e;
+  background-color: #ffb600;
   border: none;
-  color: #FFFFFF;
+  color: #ffb600;
   text-align: center;
-  font-size: 28px;
+  font-size: 18px;
   padding: 4px;
   width: 45px;
   transition: all 0.5s;
@@ -12,9 +12,7 @@
   margin: 5px;
 }
 
-/* .button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-} */
+.barIcon {
+  color: purple;
+  font-size: 30px;
+}
