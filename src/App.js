@@ -39,6 +39,16 @@ class App extends Component {
     })
   }
 
+  setStatus = (message, type) => {
+    this.setState({
+      status: { message, type }
+    });
+  }
+
+  clearStatus = () => {
+    this.setState({ status: { message: '' }})
+  }
+
   render() {
 
     return (
